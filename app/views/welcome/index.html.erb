@@ -25,6 +25,8 @@
 <script>
   console.log('parent page script start')
   
+  const iframe = document.querySelector('#C66Frame');
+  
   window.addEventListener("message", onMessage, false);
 
   function onMessage(event) {
