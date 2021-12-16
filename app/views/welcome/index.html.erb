@@ -22,14 +22,20 @@
 </div>
 
 <script>
-console.log('parent page logging');
-window.onmessage = function(event) {
-  console.log('========================== onmessage');
-  console.log(event.data);
-  console.log(event);
-  if (event.data === "closed") {
-    location.reload();
-  }
-};
+window.addEventListener('DOMContentLoaded', (event) => {
+  console.log('parent page logging');
+
+  window.onmessage = function(event) {
+    console.log('========================== parent got message');
+    console.log('the data:')
+    console.log(event.data);
+    console.log('the event object')
+    console.log(event);
+    if (event.data === "closed") {
+      location.reload();
+    }
+  };
+});
+
 </script>
 
