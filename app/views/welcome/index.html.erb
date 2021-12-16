@@ -22,26 +22,11 @@
 </div>
 
 <script>
-window.addEventListener("message", (event) => {
-  console.log('the message:')
-  console.log(event.data);
-});
-  
-  
-window.addEventListener('DOMContentLoaded', (event) => {
-  console.log('parent page logging');
-
-  window.onmessage = function(event) {
-    console.log('========================== parent got message');
-    console.log('the data:')
-    console.log(event.data);
-    console.log('the event object')
-    console.log(event);
-    if (event.data === "closed") {
-      location.reload();
-    }
-  };
-});
-
+  function getMessage() {
+      window.addEventListener("message", (event) => {
+        console.log('the message sent from ifrane is:')
+        console.log(event.data);
+    });
+  }
 </script>
 
