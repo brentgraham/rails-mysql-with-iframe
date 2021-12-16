@@ -20,3 +20,14 @@
           style="display: block; border: 0px none; width: 400px; height: 40vh;">
   </iframe>
 </div>
+
+<script>
+window.onmessage = function(event) {
+  console.log('message');
+  console.log(event);
+  if (event.data === "closed") {
+    location.reload();
+  }
+};
+</script>
+
