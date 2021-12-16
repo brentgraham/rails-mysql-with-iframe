@@ -24,7 +24,7 @@
 <script>
 console.log('parent page logging');
 window.onmessage = function(event) {
-  console.log('message');
+  console.log('========================== onmessage');
   console.log(event);
   if (event.data === "closed") {
     location.reload();
