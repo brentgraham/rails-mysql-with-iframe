@@ -24,7 +24,6 @@
 
 <script>
   console.log('parent page script start')
-  updateEl('page js loaded');
   
   window.addEventListener("message", onMessage, false);
 
@@ -45,11 +44,14 @@
       console.log(message);
       // alert(message);
       updateEl(message);
+      location.reload();
   }
   
   function updateEl(msg) {
     let el = document.getElementById('parent_page_target');
     el.innerHtml = msg;
   }
+  
+  updateEl('page js loaded');
 </script>
 
