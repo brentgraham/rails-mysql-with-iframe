@@ -40,10 +40,11 @@
 
   // Function to be called from iframe
   function parentFunc(message) {
-      console.log('parent page')
+      console.log('logging from the parent page: parentFunc');
+      console.log(message);
+      // alert(message);
       let el = document.getElementById('parent_page_target');
       el.innerHtml = message;
-      // alert(message);
   }
 </script>
 
