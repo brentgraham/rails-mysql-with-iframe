@@ -44,12 +44,11 @@
       console.log(message);
       // alert(message);
       updateEl(message);
-      location.reload();
+      // location.reload();
   }
   
   function updateEl(msg) {
-    let el = document.getElementById('parent_page_target');
-    el.innerHtml = msg;
+    document.getElementById(parent_page_target).innerHTML = msg;
   }
   
   updateEl('page js loaded');
