@@ -42,7 +42,7 @@
   // Function to be called from iframe
   function parentFunc(message) {
       console.log('parent page')
-      let el document.getElementById('parent_page_target');
+      let el = document.getElementById('parent_page_target');
       el.innerHtml = message;
       // alert(message);
   }
