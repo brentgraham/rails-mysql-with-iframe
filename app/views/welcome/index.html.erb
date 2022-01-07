@@ -13,8 +13,8 @@
 
 <!-- Begin Admin Frame Content -->
 <div style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 2147483647; width:400px; height: 50vh">
-  <iframe id="C66Frame" class="C66Frame" 
-          src="https://maestro-brent.eu.ngrok.io/admin_frame/909" 
+  <iframe id="C66Frame" class="C66Frame"
+          src="https://maestro-brent.eu.ngrok.io/admin_frame/910" 
           tabindex="0"
           loading="lazy"
           scrolling="yes"
@@ -23,9 +23,9 @@
 </div>
 <script>
   console.log('parent page script start')
-  
+
   const iframe = document.querySelector('#C66Frame');
-  
+
   window.addEventListener("message", onMessage, false);
 
   function onMessage(event) {
@@ -47,11 +47,10 @@
       updateEl(message);
       // location.reload();
   }
-  
+
   function updateEl(msg) {
     document.getElementById('para').innerHTML = msg;
   }
-  
+
   updateEl('page js loaded');
 </script>
-
