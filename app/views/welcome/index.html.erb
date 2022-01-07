@@ -12,19 +12,36 @@
 </section>
 
 <!-- Begin Admin Frame Content -->
-<div style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 2147483647; width:400px; height: 50vh">
-  <iframe id="C66Frame" class="C66Frame"
-          src="https://maestro-brent.eu.ngrok.io/admin_frame/910" 
+<div id="c66FrameContainer" style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 2147483647; width:400px; height: 50vh">
+  <!-- <iframe id="C66Frame" class="C66Frame"
+          src="https://maestro-brent.eu.ngrok.io/admin_frame/910"
           tabindex="0"
           loading="lazy"
           scrolling="yes"
-          style="display: block; border: 0px none; width:400px; height: 50vh">
-  </iframe>
+          style="border: 0px none; width:400px; height: 50vh">
+  </iframe> -->
 </div>
 <script>
-  console.log('parent page script start')
+  console.log('==== parent page script start ====')
 
-  const iframe = document.querySelector('#C66Frame');
+
+  window.addEventListener('DOMContentLoaded', addFrame);
+
+  function addFrame() {
+      const frameContainer = document.querySelector('#c66FrameContainer');
+      const iframe = document.createElement("iframe");
+      iframe.src = "https://maestro-brent.eu.ngrok.io/admin_frame/910";
+      iframe.tabindex = 0;
+      iframe.loading = "lazy"
+      iframe.scrolling = "yes"
+      iframe.style.border = "none"
+      iframe.style.width = "400px"
+      iframe.style.height = "height: 50vh"
+
+      frameContainer.appendChild(iframe);
+  }
+
+
 
   window.addEventListener("message", onMessage, false);
 
