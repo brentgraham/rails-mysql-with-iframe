@@ -12,7 +12,7 @@
 </section>
 
 <!-- Begin Admin Frame Content -->
-<div id="c66FrameContainer" style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 2147483647; width:400px; height: 50vh">
+<div id="c66FrameContainer" style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 2147483647; width:400px; height: 50vh" data-frame="https://maestro-brent.eu.ngrok.io/admin_frame/910">
   <!-- <iframe id="C66Frame" class="C66Frame"
           src="https://maestro-brent.eu.ngrok.io/admin_frame/910"
           tabindex="0"
@@ -30,13 +30,16 @@
   function addFrame() {
       const frameContainer = document.querySelector('#c66FrameContainer');
       const iframe = document.createElement("iframe");
-      iframe.src = "https://maestro-brent.eu.ngrok.io/admin_frame/910";
+      const =
+
+      iframe.src = frameContainer.dataset.frame;
       iframe.tabindex = 0;
-      iframe.loading = "lazy"
-      iframe.scrolling = "yes"
-      iframe.style.border = "none"
-      iframe.style.width = "400px"
-      iframe.style.height = "50vh"
+      iframe.loading = "lazy";
+      iframe.frameborder = "0";
+      iframe.scrolling = "yes";
+      iframe.style.border = "none";
+      iframe.style.width = "400px";
+      iframe.style.height = "50vh";
 
       frameContainer.appendChild(iframe);
   }
@@ -60,7 +63,6 @@
   function parentFunc(message) {
       console.log('logging from the parent page: parentFunc');
       console.log(message);
-      // alert(message);
       updateEl(message);
       // location.reload();
   }
