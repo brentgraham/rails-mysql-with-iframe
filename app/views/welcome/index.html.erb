@@ -55,7 +55,7 @@
          console.log('onmessage data', data);
 
          C66frame[data.func].call(null, data.message);
-         if (typeof(window[data.func]) == "function") {
+         if ( typeof(C66frame[data.func]) == "function" ) {
              C66frame[data.func].call(null, data.message);
          }
      },
