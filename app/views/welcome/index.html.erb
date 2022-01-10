@@ -17,7 +17,7 @@
 <script>
   console.log('==== parent page script start ====')
 
-  window.C66frame = {
+  let C66frame = {
       init: function() {
          console.log('FROM IFRAME -- Add the iframe to the page');
          this.addFrame();
@@ -47,7 +47,7 @@
          var data = event.data;
          console.log('onmessage data', data);
          if (typeof(window[data.func]) == "function") {
-             window.C66frame[data.func].call(null, data.message);
+             C66frame[data.func].call(null, data.message);
          }
      },
 
