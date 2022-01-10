@@ -52,9 +52,8 @@
          // if (event.origin !== "http://example.com") return;
 
          var data = event.data;
-         console.log('onmessage data', data);
+         console.log('C66frame onmessage data received: ', data);
 
-         C66frame[data.func].call(null, data.message);
          if ( typeof(C66frame[data.func]) == "function" ) {
              C66frame[data.func].call(null, data.message);
          }
