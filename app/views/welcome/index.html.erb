@@ -45,9 +45,9 @@
          // if (event.origin !== "http://example.com") return;
 
          var data = event.data;
-
+         console.log('onmessage data', data);
          if (typeof(window[data.func]) == "function") {
-             window[data.func].call(null, data.message);
+             window.C66frame[data.func].call(null, data.message);
          }
      },
 
@@ -55,8 +55,12 @@
          // this function called from iframe
          console.log('logging from the parent page: parentFunc');
          console.log(message);
-         updateEl(message);
+         this.updateEl(message);
          // location.reload();
+     },
+
+     updateEl(msg) {
+        document.getElementById('para').innerHTML = msg;
      }
   }
 
