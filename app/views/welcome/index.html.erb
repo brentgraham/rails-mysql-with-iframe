@@ -20,27 +20,29 @@
   const C66frame = {
       init: function() {
          console.log('zzzzzzzzzz Add the iframe to the page');
-      }
+         this.addFrame();
+     },
+
+     addFrame: function() {
+         const frameContainer = document.querySelector('#c66FrameContainer');
+         const iframe = document.createElement("iframe");
+
+         iframe.src = frameContainer.dataset.frame;
+         iframe.tabindex = 0;
+         iframe.loading = "lazy";
+         iframe.frameborder = "0";
+         iframe.scrolling = "yes";
+         iframe.style.border = "none";
+         iframe.style.width = "400px";
+         iframe.style.height = "50vh";
+
+         frameContainer.appendChild(iframe);
+     }
   }
+
   C66frame.init();
 
-  window.addEventListener('DOMContentLoaded', addFrame);
 
-  function addFrame() {
-      const frameContainer = document.querySelector('#c66FrameContainer');
-      const iframe = document.createElement("iframe");
-
-      iframe.src = frameContainer.dataset.frame;
-      iframe.tabindex = 0;
-      iframe.loading = "lazy";
-      iframe.frameborder = "0";
-      iframe.scrolling = "yes";
-      iframe.style.border = "none";
-      iframe.style.width = "400px";
-      iframe.style.height = "50vh";
-
-      frameContainer.appendChild(iframe);
-  }
 
 
 
