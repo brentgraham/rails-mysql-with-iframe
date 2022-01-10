@@ -35,6 +35,7 @@
          const iframe = document.createElement("iframe");
 
          iframe.src = frameContainer.dataset.frame;
+         iframe.id = "c66Frame";
          iframe.tabindex = 0;
          iframe.loading = "lazy";
          iframe.frameborder = "0";
@@ -69,7 +70,11 @@
 
      updateEl(msg) {
         document.getElementById('para').innerHTML = msg;
-     }
+    },
+
+    toggleFrame() {
+        const iframe = document.querySelector('#c66Frame');
+    }
   }
 
   C66frame.init();
