@@ -14,6 +14,7 @@
 <!-- Begin Admin Frame Content -->
 <div id="c66FrameContainer" style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 2147483647; width:400px; height: 50vh" data-frame="https://maestro-brent.eu.ngrok.io/admin_frame/911">
 </div>
+
 <script>
   console.log('==== parent page script start ====')
 
@@ -65,28 +66,4 @@
   }
 
   C66frame.init();
-
-
-
-
-
-
-
-  function onMessage(event) {
-
-  }
-
-  // Function to be called from iframe
-  function parentFunc(message) {
-      console.log('logging from the parent page: parentFunc');
-      console.log(message);
-      updateEl(message);
-      // location.reload();
-  }
-
-  function updateEl(msg) {
-    document.getElementById('para').innerHTML = msg;
-  }
-
-  updateEl('page js loaded');
 </script>
