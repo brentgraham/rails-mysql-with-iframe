@@ -13,17 +13,16 @@
 
 <!-- Begin Admin Frame Content -->
 <div id="c66FrameContainer" style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 2147483647; width:400px; height: 50vh" data-frame="https://maestro-brent.eu.ngrok.io/admin_frame/911">
-  <!-- <iframe id="C66Frame" class="C66Frame"
-          src="https://maestro-brent.eu.ngrok.io/admin_frame/910"
-          tabindex="0"
-          loading="lazy"
-          scrolling="yes"
-          style="border: 0px none; width:400px; height: 50vh">
-  </iframe> -->
 </div>
 <script>
   console.log('==== parent page script start ====')
 
+  const C66frame = {
+      init: function() {
+         console.log('zzzzzzzzzz Add the iframe to the page');
+      }
+  }
+  C66frame.init();
 
   window.addEventListener('DOMContentLoaded', addFrame);
 
