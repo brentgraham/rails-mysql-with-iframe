@@ -23,6 +23,11 @@
          console.log('FROM IFRAME -- Add the iframe to the page');
          this.addFrame();
          window.addEventListener("message", C66frame.onMessage, false);
+         this.bindEvents();
+     },
+
+     bindEvents: function() {
+
      },
 
      addFrame: function() {
@@ -42,11 +47,13 @@
      },
 
      onMessage: function() {
+         console.log('C66frame onMessage  function called');
          // Check sender origin to be trusted
          // if (event.origin !== "http://example.com") return;
 
          var data = event.data;
          console.log('onmessage data', data);
+         C66frame[data.func].call(null, data.message);
          if (typeof(window[data.func]) == "function") {
              C66frame[data.func].call(null, data.message);
          }
@@ -54,7 +61,7 @@
 
      parentFunc(message) {
          // this function called from iframe
-         console.log('logging from the parent page: parentFunc');
+         console.log('============ logging from the parent page: parentFunc');
          console.log(message);
          this.updateEl(message);
          // location.reload();
