@@ -77,8 +77,15 @@
         console.log('toggleFrame called');
         const iframeContainer = document.querySelector('#c66FrameContainer');
         const iframe = document.querySelector('#c66Frame');
-        iframe.style.height = "50px";
-        iframe.classList.toggle('toggled');
+        if (iframeContainer.classList.contains('minimised')) {
+            iframeContainer.classList.toggle('minimised');
+            iframeContainer.style.height = "40vh";
+            iframe.style.height = "40vh";
+        } else {
+            iframeContainer.style.height = "50px";
+            iframe.style.height = "50px";
+            iframeContainer.classList.toggle('minimised');
+        }
     }
   }
 
