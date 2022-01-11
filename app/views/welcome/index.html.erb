@@ -12,7 +12,10 @@
 </section>
 
 <!-- Begin Admin Frame Content -->
-<div id="c66FrameContainer" style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 2147483647; height: 40vh" data-frame="https://maestro-brent.eu.ngrok.io/admin_frame/912">
+<!-- Need to update data-frame with your stack url -->
+<div id="c66FrameContainer"
+    style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 2147483647; height: 40vh; outline: 1px solid red"
+    data-frame="https://maestro-brent.eu.ngrok.io/admin_frame/912">
 </div>
 
 <script>
@@ -34,10 +37,10 @@
          iframe.tabindex = 0;
          iframe.loading = "lazy";
          iframe.frameborder = "0";
-         iframe.scrolling = "yes";
+         iframe.scrolling = "no";
          iframe.style.border = "none";
          iframe.style.width = "400px";
-         iframe.style.height = "50vh";
+         iframe.style.height = "20vh";
 
          frameContainer.appendChild(iframe);
      },
@@ -56,7 +59,7 @@
      },
 
      parentFunc(message) {
-         // this function called from iframe
+         // this function called from iframe after a faye update
          console.log('============ logging from the parent page: parentFunc');
          console.log(message);
          C66frame.updateEl(message);
@@ -68,7 +71,9 @@
     },
 
     toggleFrame() {
+        // this function called from iframe to minimize/mazimize the frame injected into the page
         console.log('toggleFrame called');
+        const iframeContainer = document.querySelector('#c66FrameContainer');
         const iframe = document.querySelector('#c66Frame');
         iframe.style.height = "50px";
         iframe.classList.toggle('toggled');
