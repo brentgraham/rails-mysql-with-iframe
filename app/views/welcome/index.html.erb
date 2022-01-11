@@ -63,14 +63,17 @@
          console.log('============ logging from the parent page: parentFunc');
          console.log(message);
          C66frame.updateEl(message);
-         // location.reload();
      },
 
-     updateEl(msg) {
+    refreshPage: function() {
+     location.reload();
+    },
+
+    updateEl: function(msg) {
         document.getElementById('para').innerHTML = msg;
     },
 
-    toggleFrame() {
+    toggleFrame: function() {
         // this function called from iframe to minimize/mazimize the frame injected into the page
         console.log('toggleFrame called');
         const iframeContainer = document.querySelector('#c66FrameContainer');
