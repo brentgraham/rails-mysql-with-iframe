@@ -2,6 +2,10 @@
   <h1>Hello, iframe!</h1>
   <%= link_to 'My Blog', controller: 'articles' %>
   <div>
+    <h2>Debug Info</h2>
+    <p>#c66FrameContainer: red</p>
+    <p id="para">content</p>
+
     <h2>Test Content</h2>
     <p>
       test content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -9,11 +13,6 @@
     <p>
       test content Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-    <h2>Debug Info</h2>
-    <p>
-        #c66FrameContainer: red
-    </p>
-    <p id="para">content</p>
   </div>
 </section>
 
@@ -29,12 +28,14 @@
 
   let C66frame = {
       init: function() {
-         console.log('FROM IFRAME -- Add the iframe to the page');
          this.addFrame();
+         // Allow  iframe to send messages to the parent page via onMessage function
          window.addEventListener("message", C66frame.onMessage, false);
      },
 
      addFrame: function() {
+         console.log('Append the C66 iframe into the page.');
+
          const frameContainer = document.querySelector('#c66FrameContainer');
          const iframe = document.createElement("iframe");
 
@@ -64,8 +65,8 @@
          }
      },
 
-     parentFunc(data) {
-         // this function called from iframe after a faye update
+     onFayeUpdate(data) {
+         // Called from iframe after a faye update
          console.log('============ logging from the parent page: parentFunc');
          console.log(data);
          document.getElementById('para').innerHTML = data.message;
