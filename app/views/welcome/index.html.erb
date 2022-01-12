@@ -3,7 +3,7 @@
   <%= link_to 'My Blog', controller: 'articles' %>
   <div>
     <h2>Debug Info</h2>
-    <p>#c66FrameContainer: red</p>
+    <p>#c66FrameContainer:</p>
     <p id="para">content</p>
 
     <h2>Test Content</h2>
@@ -19,7 +19,7 @@
 <!-- Begin Admin Frame Content -->
 <!-- Need to update data-frame with your stack url -->
 <div id="c66FrameContainer"
-    style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 2147483647; height: 50vh; outline: 1px solid red"
+    style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 2147483647; height: 55vh;"
     data-frame="https://maestro-brent.eu.ngrok.io/admin_frame/913">
 </div>
 
@@ -47,7 +47,7 @@
          iframe.scrolling = "no";
          iframe.style.border = "none";
          iframe.style.width = "420px";
-         iframe.style.height = "50vh";
+         iframe.style.height = "55vh";
 
          frameContainer.appendChild(iframe);
      },
@@ -83,8 +83,8 @@
         const iframe = document.querySelector('#c66Frame');
         if (iframeContainer.classList.contains('minimised')) {
             iframeContainer.classList.toggle('minimised');
-            iframeContainer.style.height = "50vh";
-            iframe.style.height = "50vh";
+            iframeContainer.style.height = "55vh";
+            iframe.style.height = "55vh";
             iframe.style.width = "420px";
         } else {
             iframeContainer.style.height = "63px";
