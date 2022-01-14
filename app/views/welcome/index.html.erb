@@ -35,7 +35,7 @@
 <!-- Need to update data-frame with the correct stack url -->
 <div id="c66FrameContainer"
     class="minimised"
-    style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 2147483647; height: 52px;"
+    style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 999999999999; height: 52px;"
     data-frame="https://maestro-brent.eu.ngrok.io/admin_frame/915">
 </div>
 
@@ -104,12 +104,16 @@
         const iframe = document.querySelector('#c66Frame');
 
         if (iframeContainer.classList.contains('minimised')) {
+            console.log('maximise it');
+            console.log(this.maximisedHeight);
+            console.log(this.maximisedWidth);
             iframeContainer.classList.toggle('minimised');
             iframeContainer.style.height = this.maximisedHeight;
             iframe.style.height = this.maximisedHeight;
             iframe.style.width = this.maximisedWidth;
             localStorage.setItem('c66Frame', 'max');
         } else {
+            console.log('minimise it');
             iframeContainer.style.height = this.minimisedHeight;
             iframe.style.height = this.minimisedHeight;
             iframe.style.width = this.minimisedWidth;
