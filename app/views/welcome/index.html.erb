@@ -96,14 +96,17 @@
         console.log('toggleFrame called');
         const iframeContainer = document.querySelector('#c66FrameContainer');
         const iframe = document.querySelector('#c66Frame');
+        const maximisedHeight = "56vh" // 55% of view port height
+        const minimisedHeight = "63px";
+
         if (iframeContainer.classList.contains('minimised')) {
             iframeContainer.classList.toggle('minimised');
-            iframeContainer.style.height = "55vh";
-            iframe.style.height = "55vh";
+            iframeContainer.style.height = maximisedHeight;
+            iframe.style.height = maximisedHeight;
             iframe.style.width = "420px";
         } else {
-            iframeContainer.style.height = "63px";
-            iframe.style.height = "63px";
+            iframeContainer.style.height = minimisedHeight;
+            iframe.style.height = minimisedHeight;
             iframe.style.width = "66px";
             iframeContainer.classList.toggle('minimised');
         }
