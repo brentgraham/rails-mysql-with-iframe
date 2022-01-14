@@ -97,7 +97,7 @@
         const iframeContainer = document.querySelector('#c66FrameContainer');
         const iframe = document.querySelector('#c66Frame');
         const maximisedHeight = "58vh" // 55% of view port height
-        const minimisedHeight = "63px";
+        const minimisedHeight = "60px";
 
         if (iframeContainer.classList.contains('minimised')) {
             iframeContainer.classList.toggle('minimised');
@@ -108,7 +108,7 @@
         } else {
             iframeContainer.style.height = minimisedHeight;
             iframe.style.height = minimisedHeight;
-            iframe.style.width = "160px";
+            iframe.style.width = "170px";
             iframeContainer.classList.toggle('minimised');
             localStorage.setItem('c66Frame', 'min');
         }
