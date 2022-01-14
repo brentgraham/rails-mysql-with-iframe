@@ -67,8 +67,8 @@
          iframe.frameborder = "0";
          iframe.scrolling = "no";
          iframe.style.border = "none";
-         iframe.style.width = this.minimisedWidth;
-         iframe.style.height = this.minimisedHeight;
+         iframe.style.width = C66frame.minimisedWidth;
+         iframe.style.height = C66frame.minimisedHeight;
 
          frameContainer.appendChild(iframe);
      },
@@ -108,15 +108,15 @@
             console.log(this.maximisedHeight);
             console.log(this.maximisedWidth);
             iframeContainer.classList.toggle('minimised');
-            iframeContainer.style.height = this.maximisedHeight;
-            iframe.style.height = this.maximisedHeight;
-            iframe.style.width = this.maximisedWidth;
+            iframeContainer.style.height = C66frame.maximisedHeight;
+            iframe.style.height = C66frame.maximisedHeight;
+            iframe.style.width = C66frame.maximisedWidth;
             localStorage.setItem('c66Frame', 'max');
         } else {
             console.log('minimise it');
-            iframeContainer.style.height = this.minimisedHeight;
-            iframe.style.height = this.minimisedHeight;
-            iframe.style.width = this.minimisedWidth;
+            iframeContainer.style.height = C66frame.minimisedHeight;
+            iframe.style.height = C66frame.minimisedHeight;
+            iframe.style.width = C66frame.minimisedWidth;
             iframeContainer.classList.toggle('minimised');
             localStorage.setItem('c66Frame', 'min');
         }
