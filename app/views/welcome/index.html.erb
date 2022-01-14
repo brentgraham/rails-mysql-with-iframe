@@ -48,6 +48,11 @@
          window.addEventListener("message", C66frame.onMessage, false);
      },
 
+     maximisedHeight: "58vh",
+     maximisedWidth: "420px",
+     minimisedHeight: "52px",
+     minimisedWidth: "165px",
+
      addFrame: function() {
          console.log('Append the C66 iframe into the page.');
 
@@ -61,8 +66,8 @@
          iframe.frameborder = "0";
          iframe.scrolling = "no";
          iframe.style.border = "none";
-         iframe.style.width = "420px";
-         iframe.style.height = "55vh";
+         iframe.style.width = this.minimisedWidth;
+         iframe.style.height = this.minimisedHeight;
 
          frameContainer.appendChild(iframe);
      },
@@ -96,19 +101,17 @@
         console.log('toggleFrame called');
         const iframeContainer = document.querySelector('#c66FrameContainer');
         const iframe = document.querySelector('#c66Frame');
-        const maximisedHeight = "58vh" // 55% of view port height
-        const minimisedHeight = "52px";
 
         if (iframeContainer.classList.contains('minimised')) {
             iframeContainer.classList.toggle('minimised');
-            iframeContainer.style.height = maximisedHeight;
-            iframe.style.height = maximisedHeight;
-            iframe.style.width = "420px";
+            iframeContainer.style.height = this.maximisedHeight;
+            iframe.style.height = this.maximisedHeight;
+            iframe.style.width = this.maximisedWidth;
             localStorage.setItem('c66Frame', 'max');
         } else {
-            iframeContainer.style.height = minimisedHeight;
-            iframe.style.height = minimisedHeight;
-            iframe.style.width = "165px";
+            iframeContainer.style.height = this.minimisedHeight;
+            iframe.style.height = this.minimisedHeight;
+            iframe.style.width = this.minimisedWidth;
             iframeContainer.classList.toggle('minimised');
             localStorage.setItem('c66Frame', 'min');
         }
