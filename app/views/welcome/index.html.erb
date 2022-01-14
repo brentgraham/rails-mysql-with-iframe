@@ -104,11 +104,13 @@
             iframeContainer.style.height = maximisedHeight;
             iframe.style.height = maximisedHeight;
             iframe.style.width = "420px";
+            localStorage.setItem('c66Frame', 'max');
         } else {
             iframeContainer.style.height = minimisedHeight;
             iframe.style.height = minimisedHeight;
-            iframe.style.width = "66px";
+            iframe.style.width = "160px";
             iframeContainer.classList.toggle('minimised');
+            localStorage.setItem('c66Frame', 'min');
         }
     }
   }
