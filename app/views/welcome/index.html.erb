@@ -57,10 +57,8 @@
      addFrame: function() {
          console.log('Append the C66 iframe into the page.');
 
-         const adminFrame = document.querySelector('#js_admin_frame');
          const frameContainer = document.querySelector('#c66FrameContainer');
          const iframe = document.createElement("iframe");
-
 
          iframe.src = frameContainer.dataset.frame;
          iframe.id = "c66Frame";
@@ -69,14 +67,8 @@
          iframe.frameborder = "0";
          iframe.scrolling = "no";
          iframe.style.border = "none";
-
-         if ( adminFrame.classList.contains('js_logged_out') ) {
-             iframe.style.width = C66frame.maximisedWidth;
-             iframe.style.height = C66frame.maximisedHeight;
-         } else {
-             iframe.style.width = C66frame.minimisedWidth;
-             iframe.style.height = C66frame.minimisedHeight;
-        }
+         iframe.style.width = C66frame.minimisedWidth;
+         iframe.style.height = C66frame.minimisedHeight;
 
          frameContainer.appendChild(iframe);
      },
