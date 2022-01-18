@@ -36,7 +36,7 @@
 <div id="c66FrameContainer"
     class="minimised"
     style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 999999999999; height: 52px;"
-    data-frame="https://maestro-brent.eu.ngrok.io/admin_frame/916">
+    data-frame="https://maestro-brent.eu.ngrok.io/admin_frame/917">
 </div>
 
 <script>
@@ -95,6 +95,10 @@
 
     refreshPage: function() {
         // location.reload();
+    },
+
+    updatePage: function() {
+        window.location.href = data.message;
     },
 
     toggleFrame: function() {
