@@ -31,15 +31,14 @@
   </div>
 </section>
 
-<!-- Begin Admin Frame Content -->
-<!-- Need to update data-frame with the correct stack url -->
+<%# Begin C66 deployment iframe Content %>
+<%# Update data-frame with the correct stack url %>
+<!-- Start C66 iframe -->
 <div id="c66FrameContainer"
     class="minimised"
     style="background: transparent; position: fixed; bottom: 0px; left: 0px; margin: 0px; padding: 0px; z-index: 999999999999; height: 52px;"
     data-frame="https://maestro-brent.eu.ngrok.io/admin_frame/917">
 </div>
 <script src="https://maestro-brent.eu.ngrok.io/javascripts/frame/c66frame.js"></script>
-<script>
-  console.log('==== parent page script start ====')
-  C66frame.init();
-</script>
+<script>C66frame.init();</script>
+<!-- End C66 iframe -->
