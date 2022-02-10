@@ -2,14 +2,12 @@
   <h1>Hello, iframe!</h1>
   <%= link_to 'My Blog', controller: 'articles' %>
   <div>
-    <h2>Debug Info</h2>
-    <p>#c66FrameContainer:</p>
-
-    <p id="para">testing content</p>
-
-    <h2>Iframe Test Page</h2>
+    <h2>Iframe Testing Page</h2>
     <p>
-      A public script is added to this page:  <code>/javascripts/frame/c66frame.js</code>. It will inject an iframe based on a data attribute set on the <code>c66FrameContainer</code>.
+        This tests an iframe injected into a rails application rendering an admin_frame view from central.
+    </p>
+    <p>
+      A public script is added to this page:  <code>/javascripts/frame/c66frame.js</code>. It will inject an iframe based on a data attribute set on the <code>c66FrameContainer</code> element.
     </p>
 
     <h2>Template</h2>
@@ -28,11 +26,11 @@
     </code>
     </div>
 
-    <p>This html has been added to <code>layouts/application</code></p>
+    <p>The above html has been added to <code>layouts/application</code> and is rendered on all pages.</p>
 
     <h2>postMessage</h2>
     <p>
-      window.postMessage() is used to enable cross-origin communication between the iframe and this page.
+      window.postMessage() is used to enable cross-origin communication between the central iframe and this page.
     </p>
   </div>
 </section>
