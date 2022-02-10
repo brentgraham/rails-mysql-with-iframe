@@ -1,17 +1,20 @@
 <section style="padding: 2em 0; font-family: sans-serif">
-  <h1>Hello, iframe!</h1>
-  <%= link_to 'My Blog', controller: 'articles' %>
-  <div>
-    <h2>Iframe Testing Page</h2>
-    <p>
-        This tests an iframe injected into a rails application rendering an admin_frame view from central.
-    </p>
-    <p>
-      A public script is added to this page:  <code>/javascripts/frame/c66frame.js</code>. It will inject an iframe based on a data attribute set on the <code>c66FrameContainer</code> element.
-    </p>
+    <article>
+        <h1>Hello, iframe!</h1>
+        <%= link_to 'My Blog', controller: 'articles' %>
+    </article>
 
-    <h2>Template</h2>
-    <p>The template needs to include some html and js above the closing body tag.</p>
+    <article>
+        <h2>Iframe Testing Page</h2>
+        <p>
+            This tests an iframe injected into a rails application rendering an admin_frame view from central.
+        </p>
+        <p>
+          A public script is added to this page:  <code>/javascripts/frame/c66frame.js</code>. It will inject an iframe based on a data attribute set on the <code>c66FrameContainer</code> element.
+        </p>
+
+        <h2>Template</h2>
+        <p>The template needs to include some html and js above the closing body tag.</p>
 
     <div>
     <code style="background: #eee"; padding: 8px>
@@ -27,10 +30,13 @@
     </div>
 
     <p>The above html has been added to <code>layouts/application</code> and is rendered on all pages.</p>
+    </article>
 
-    <h2>postMessage</h2>
-    <p>
-      window.postMessage() is used to enable cross-origin communication between the central iframe and this page.
-    </p>
+    <article>
+        <h2>postMessage</h2>
+        <p>
+          window.postMessage() is used to enable cross-origin communication between the central iframe and this page.
+        </p>
+    </article>
   </div>
 </section>
