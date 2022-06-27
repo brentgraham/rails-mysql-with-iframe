@@ -1,5 +1,5 @@
 # README
 
-Basic Rails/MySQL Example Application with iframe
+Basic Rails/MySQL Example Application with iframe.
 
 
