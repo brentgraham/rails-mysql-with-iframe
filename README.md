@@ -1,5 +1,5 @@
 # README
 
-Rails/MySQL Example Application with deployments iframe.
+Rails/MySQL demo application with Cloud 66 deployments iframe.
 
 
